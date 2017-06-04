@@ -15,26 +15,8 @@
         header p { padding-left: 4.5em;}
       }
 
-      @media print {
-        * { background: transparent; color: black; }
-        img { page-break-inside: avoid; max-width: 100% ;}
-        @page { margin: 0.5cm; }
-        p, h2, h3 { orphans: 3; widows: 3; }
-        h2, h3{ page-break-after: avoid; }
-      }
     </style>
-<!--
-    <script async>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
 
-      // Optional TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-100366417-2');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
--->
   </head>
 
   <body>
@@ -77,9 +59,36 @@
       </div>
 
       <footer>
-        <p>&copy; Web Performance 2017</p>
+        <p>&copy; Web Performance 2017 <span id="crp-stats"></span></p>
       </footer>
     </div>
+
+    <script async>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      // Optional TODO: replace with your Google Analytics profile ID.
+      ga('create', 'UA-100366417-2');
+      ga('send', 'pageview');
+    </script>
+
+    <script async>
+      function logCRP() {
+        var t = window.performance.timing,
+          dcl = t.domContentLoadedEventStart - t.domLoading,
+          complete = t.domComplete - t.domLoading;
+        var stats = document.getElementById("crp-stats");
+        stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+      }
+
+      window.addEventListener("load", function(event) {
+        logCRP();
+      });
+    </script>
+
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+<!--<script async src="js/perfmatters.js"></script>  -->
+
   </body>
 
 </html>
