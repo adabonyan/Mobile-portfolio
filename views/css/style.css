@@ -9,12 +9,13 @@
 
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background: black;
+  background-color: black;
 }
 
 input {
   background: grey;
   font-size: 18px;
+  margin-bottom: 15px;
 }
 
 form {
