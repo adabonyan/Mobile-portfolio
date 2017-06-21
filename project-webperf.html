@@ -12,7 +12,7 @@
     <style type="text/css">
       @media only screen and (max-width: 480px) {
         body { font-size: 12px;}
-        header p { padding-left: 4.5em;}
+        .headerP { padding-left: 4.5em;}
       }
     </style>
 
@@ -20,13 +20,13 @@
 
   <body>
     <header>
-      <img src="img/profilepix.jpg">
-      <p><b>Olu Adabonyan</b><br><span>Student - Udacity FrontEnd Web Developer Nanodegree Course</span></p>
+      <img class="headerImage" src="img/profilepix.jpg">
+      <p class="headerP"><b>Olu Adabonyan</b><br><span>Student - Udacity FrontEnd Web Developer Nanodegree Course</span></p>
     </header>
 
     <div class="container">
       <div class="hero">
-        <strong>Thanks for taking this class!</strong> The time and energy I am investing on this course is indeed worth it. I will definitely march on to Full Stack Web Developer Course this year. More fun!
+        <b>Thanks for taking this class!</b> The time and energy I am investing on this course is indeed worth it. I will definitely march on to Full Stack Web Developer Course this year. More fun!
       </div>
 
       <div class="content">
@@ -42,7 +42,31 @@
     </div>
 
     <footer>
-      <p>&copy; Web Performance 2017</p>
+      <p>&copy; Web Performance 2017 <span id="crp-stats"></span></p>
     </footer>
+
+    <script async>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      // Optional TODO: replace with your Google Analytics profile ID.
+      ga('create', 'UA-100366417-2');
+      ga('send', 'pageview');
+    </script>
+
+    <script async>
+      function logCRP() {
+        var t = window.performance.timing,
+          dcl = t.domContentLoadedEventStart - t.domLoading,
+          complete = t.domComplete - t.domLoading;
+        var stats = document.getElementById("crp-stats");
+        stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+      }
+
+      window.addEventListener("load", function(event) {
+        logCRP();
+      });
+    </script>
+
   </body>
 </html>
