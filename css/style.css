@@ -1,9 +1,15 @@
-html {
+body {
   font-size: 100%;
   overflow-y: scroll;
+  font-family: Serif, Sans-serif;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.61;
+  font-weight: 400;
+  color: #333;
 }
-body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; font-family: 'Open Sans', sans-serif; }
-body, button, input, select, textarea { font-family: 'Open Sans', sans-serif; color: #333; }
+
+button, input, select, textarea { color: #333; }
 
 a { color: #12C; }
 a:hover { color: #c00; }
@@ -14,8 +20,8 @@ img { max-width: 100%; }
 header, footer, .container { max-width: 45em; margin: 0 auto; }
 
 header { padding: 0 0.5em; color: #C90B0B; }
-header img { border-radius: 40px; float: left; }
-header p { font-size:1.5em; padding-left: 4em;}
+.headerImage { border-radius: 40px; float: left; }
+.headerP { font-size:1.5em; padding-left: 4em;}
 span { font-size: 0.8em; }
 
 .hero { padding: 2em; background-color: #f8f8f8; font-size:1.2em;
@@ -25,14 +31,15 @@ span { font-size: 0.8em; }
 
 .content { padding: 1em 1em; }
 ul { list-style-type: none; font-size: 1.1em; }
-ul img { float:left; padding-right: 1em; }
-ul p { font-size: 0.9em; font-style: italic; }
+.ulImage { float:left; padding-right: 1em; }
+.ulP { font-size: 0.9em; font-style: italic; }
 
 footer {
   padding: 0 0.5em;
   border-top: 1px solid #ccc;
 }
-footer span { float: right; font-style: italic; }
+
+#crp-stats { float: right; font-style: italic; }
 
 @media print {
   * { background: transparent; color: black; }
