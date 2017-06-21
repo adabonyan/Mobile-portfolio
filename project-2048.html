@@ -12,7 +12,7 @@
     <style type="text/css">
       @media only screen and (max-width: 480px) {
         body { font-size: 12px;}
-        header p { padding-left: 4.5em;}
+        .headerP { padding-left: 4.5em;}
       }
     </style>
 
@@ -20,18 +20,18 @@
 
   <body>
     <header>
-      <img src="img/profilepix.jpg">
-      <p><b>Olu Adabonyan</b><br><span>Student - Udacity FrontEnd Web Developer Nanodegree Course</span></p>
+      <img class="headerImage" src="img/profilepix.jpg">
+      <p class="headerP"><b>Olu Adabonyan</b><br><span>Student - Udacity FrontEnd Web Developer Nanodegree Course</span></p>
     </header>
 
     <div class="container">
       <div class="hero">
-        <strong>2048 is awesome!</strong> I loved making my own 2048 and will do this once I get through with my psi score. For now let's have fun with the Udacity version of 2048.
+        <b>2048 is awesome!</b> I loved making my own 2048 and will do this once I get through with my psi score. For now let's have fun with the Udacity version of 2048.
       </div>
 
       <div class="content">
 
-        <img class="" src="img/2048Large.jpg">
+        <img src="img/2048Large.jpg">
 
         <p>Bacon ipsum dolor sit amet et pork belly porchetta excepteur dolor, laborum laboris magna labore dolore in fugiat beef ribs. Fugiat leberkas nulla do kevin dolore. Flank hamburger dolor swine prosciutto sirloin pig jerky sunt consequat pariatur. Mollit meatloaf nostrud laboris shoulder excepteur velit officia meatball nisi turkey. Nulla jowl spare ribs, et drumstick magna frankfurter.</p>
 
@@ -40,7 +40,31 @@
     </div>
 
     <footer>
-      <p>&copy; Web Performance 2017</p>
+      <p>&copy; Web Performance 2017 <span id="crp-stats"></span></p>
     </footer>
+
+    <script async>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      // Optional TODO: replace with your Google Analytics profile ID.
+      ga('create', 'UA-100366417-2');
+      ga('send', 'pageview');
+    </script>
+
+    <script async>
+      function logCRP() {
+        var t = window.performance.timing,
+          dcl = t.domContentLoadedEventStart - t.domLoading,
+          complete = t.domComplete - t.domLoading;
+        var stats = document.getElementById("crp-stats");
+        stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+      }
+
+      window.addEventListener("load", function(event) {
+        logCRP();
+      });
+    </script>
+
   </body>
 </html>
