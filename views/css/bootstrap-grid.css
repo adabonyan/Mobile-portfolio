@@ -749,6 +749,7 @@ hr {
 .row:after {
   clear: both;
 }
+/*
 .center-block {
   display: block;
   margin-left: auto;
@@ -760,15 +761,19 @@ hr {
 .pull-left {
   float: left !important;
 }
+
 .hide {
   display: none !important;
 }
+
 .show {
   display: block !important;
 }
+
 .invisible {
   visibility: hidden;
 }
+
 .text-hide {
   font: 0/0 a;
   color: transparent;
@@ -776,6 +781,7 @@ hr {
   background-color: transparent;
   border: 0;
 }
+
 .hidden {
   display: none !important;
   visibility: hidden !important;
@@ -785,3 +791,4 @@ hr {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+*/
