@@ -1,8 +1,8 @@
 # Project Objectives
 Optimize to meet specifications for:
-- Critical Rendering Path
-- Frame Rate of 60fps
-- Computation Efficiency
+- Critical Rendering Path: Achieved PSI 87/100 for mobile/desktop
+- Frame rate: Achieved 60fps while scrolling
+- Computation Efficiency: Achieved < 5ms to resize pizza
 
 ## Download
 To download the app, click [here]( https://adabonyan.github.io/frontend-nanodegree-mobile-portfolio/ )
